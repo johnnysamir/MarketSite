@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Adhesivo Vinílico Craft eQ",
+        "description": "Cola de carpintero adhesivo vinílico de alta calidad, ideal para trabajos de madera y carpintería. Envase amarillo con tapa negra.",
+        "price": 3500,
+        "image": "/img/adhesivo_vinilico.webp"
+    },
+    {
+        "id": 2,
+        "name": "Pincel Chato OneArt Serie 650 Nº16",
+        "description": "Pincel chato de fibra sintética mix toray, ideal para diversas técnicas de pintura. Mango negro y azul.",
+        "price": 1200,
+        "image": "/img/pincel_chato.webp"
+    },
+    {
+        "id": 3,
+        "name": "Set de Acrílicos Decorativos eQ x18",
+        "description": "Colección de 18 frascos de acrílico decorativo en una amplia gama de colores vibrantes para todo tipo de manualidades.",
+        "price": 15000,
+        "image": "/img/set_acrilicos.webp"
+    },
+    {
+        "id": 4,
+        "name": "Marcadores Permanentes Trabi 410 x10 Recargables",
+        "description": "Estuche de 10 marcadores permanentes recargables Trabi 410 con punta indeformable de 2-6 mm en colores surtidos.",
+        "price": 8500,
+        "image": "/img/marcadores_trabi.webp"
+    },
+    {
+        "id": 5,
+        "name": "Marcadores Permanentes Trabi 410 x10 Recargables (Vista 2)",
+        "description": "Otra vista del estuche de 10 marcadores permanentes recargables Trabi 410 en colores surtidos.",
+        "price": 8500,
+        "image": "/img/marcadores_trabi_vista2.webp"
+    },
+    {
+        "id": 6,
+        "name": "Set de Témperas eQ x10",
+        "description": "Set de 10 botellas de témpera escolar eQ en colores básicos y secundarios, ideales para proyectos educativos.",
+        "price": 7000,
+        "image": "/img/D_NQ_NP_2X_979324-MLA99938163909_112025-F.webp"
+    },
+    {
+        "id": 7,
+        "name": "Marcador Permanente Trabi 410 Plus Marrón x10",
+        "description": "Caja de 10 marcadores permanentes Trabi 410 Plus en color marrón. Punta biselada, trazo fluido y recargable. Escribe sobre metal, vidrio y plástico.",
+        "price": 9000,
+        "image": "/img/image_6.webp"
+    }
+]
