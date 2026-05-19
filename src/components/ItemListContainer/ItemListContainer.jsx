@@ -26,8 +26,6 @@ export const ItemListContainer = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        setLoading(true);
-
         fetch("/data/products.json")
             .then((resp) => {
                 if (!resp.ok) {

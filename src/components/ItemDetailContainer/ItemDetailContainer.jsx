@@ -10,7 +10,6 @@ export const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(true);
         // La carpeta public se sirve en la raíz ("/"), sin importar dónde esté el componente
         fetch("/data/products.json")
             .then((resp) => resp.json())
