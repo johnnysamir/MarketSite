@@ -1,8 +1,7 @@
-.products-container {
-    margin: 2rem 0;
+.item-list {
     display: flex;
-    justify-content: center;
-
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }

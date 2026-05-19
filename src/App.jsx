@@ -8,6 +8,7 @@ import { Header } from './components/Header/Header'
 import { Footer } from './components/Footer/Footer'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
+import { Products } from './components/Nav/Products'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route path="product/:id" element={<ItemDetailContainer />} />
+          <Route path="products" element={<Products />} />
           <Route path="carrito" element={<h1>Carrito</h1>} />
         </Routes>
       </main>

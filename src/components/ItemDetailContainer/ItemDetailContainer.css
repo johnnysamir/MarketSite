@@ -1,0 +1,45 @@
+.item-detail-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.item-detail-header {
+    width: 100%;
+    max-width: 900px;
+    /* Mismo ancho que la tarjeta ItemDetail */
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.btn-back {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #4a5568;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+.item-detail-section h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}

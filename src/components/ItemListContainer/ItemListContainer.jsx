@@ -23,11 +23,11 @@ import { ItemList } from "../ItemList/ItemList";
 export const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null); // Nuevo estado para UI de error
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         setLoading(true);
-        // Usamos ruta absoluta (/) para evitar problemas con React Router en rutas anidadas
+
         fetch("/data/products.json")
             .then((resp) => {
                 if (!resp.ok) {
@@ -36,7 +36,7 @@ export const ItemListContainer = () => {
                 return resp.json();
             })
             .then((data) => {
-                setProducts(data.products || data); // Compatible con JSON que son objetos o arrays directos
+                setProducts(data);
             })
             .catch((error) => {
                 console.error("Error detallado al cargar productos:", error);
@@ -46,7 +46,7 @@ export const ItemListContainer = () => {
     }, []);
 
     if (loading) return <p>Cargando...</p>;
-    if (error) return <p>{error}</p>; // Mostramos el error en el navegador
+    if (error) return <p>{error}</p>;
 
     return (
         <section>
