@@ -10,3 +10,11 @@ header {
     align-items: center;
     font-size: 2rem;
 }
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+}

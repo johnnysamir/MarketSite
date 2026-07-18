@@ -1,37 +1,46 @@
-nav {
+.nav-list {
+    list-style: none;
+
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
-.nav-list {
-    display: flex;
-    gap: 1.5rem;
-    /* Espaciado uniforme entre los enlaces */
-    list-style: none;
-    /* Quita las viñetas por defecto */
-    margin: 0;
-    padding: 0;
+.nav-list li {
+    font-size: 2rem;
+    margin: 0.5rem;
 }
 
 .nav-list a {
     text-decoration: none;
-    /* Quita el subrayado de los links */
-    color: #4a5568;
-    /* Color de texto gris oscuro/azulado */
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    /* Bordes redondeados en el hover */
-    transition: all 0.3s ease;
-    /* Transición suave para todos los cambios */
+    color: inherit;
 }
 
-.nav-list a:hover {
-    background-color: #edf2f7;
-    /* Fondo gris muy claro al pasar el mouse */
-    color: #3182ce;
-    /* Cambia a azul claro */
-    transform: translateY(-2px);
-    /* Pequeño salto hacia arriba al hacer hover */
+.incart {
+    background-color: red;
+    font-size: 1rem;
+    border-radius: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .nav-list li {
+        font-size: 1.5rem;
+        margin: 0.25rem 0;
+    }
 }

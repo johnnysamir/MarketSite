@@ -1,6 +1,5 @@
 import "./Item.css"
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/useCart.jsx"; // se importa el hook useCart para acceder al contexto del carrito de compras
 
 
 // FakeStore y dummyjson utilizan clave "title" para el nombre de producto

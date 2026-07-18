@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { getProductById } from "../../services/productsService";
 import "./ItemDetailContainer.css";
 
 export const ItemDetailContainer = () => {
@@ -8,22 +9,27 @@ export const ItemDetailContainer = () => {
     const navigate = useNavigate();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [prevId, setPrevId] = useState(id);
+
+    if (id !== prevId) {
+        setPrevId(id);
+        setLoading(true);
+    }
 
     useEffect(() => {
-        // La carpeta public se sirve en la raíz ("/"), sin importar dónde esté el componente
-        fetch("/data/products.json")
-            .then((resp) => resp.json())
+        getProductById(id)
             .then((data) => {
-                const item = data.find((element) => String(element.id) === String(id));
-                if (item) {
-                    setProduct(item);
-                    return;
+                if (data) {
+                    setProduct(data);
+                } else {
+                    setProduct(null);
                 }
-                throw new Error("Producto no encontrado");
             })
-            .catch((error) => console.log(error))
+            .catch((error) => {
+                console.error("Error al obtener detalle del producto:", error);
+            })
             .finally(() => setLoading(false));
-    }, [id]); // Es buena práctica incluir 'id' en las dependencias
+    }, [id]);
 
     if (loading) return <p>Cargando...</p>;
     if (!product) return <p>Producto no encontrado</p>;

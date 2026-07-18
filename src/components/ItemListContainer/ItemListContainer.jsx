@@ -1,38 +1,22 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ItemList } from "../ItemList/ItemList";
-
-
-//CON LA API FAKESTORE
-// useEffect(() => {
-//   fetch("https://fakestoreapi.com/products")
-//     .then((res) => res.json())
-//     .then((data) => setProducts(data))
-//     .catch((err) => console.log(err))
-//     .finally(() => setLoading(false));
-// }, []);
-
-//CON LA API DUMMYJSON (OJO con respuesta en objeto. Atributo de imagen en array)
-// useEffect(() => {
-//   fetch("https://dummyjson.com/products")
-//     .then((res) => res.json())
-//     .then((data) => setProducts(data.products)) //dummyjson devuelve un objeto con clave products que tiene el array
-//     .catch((err) => console.log(err))
-//     .finally(() => setLoading(false));
-// }, []);
+import { getByCategory } from "../../services/productsService";
 
 export const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { category } = useParams();
+    const [prevCategory, setPrevCategory] = useState(category);
+
+    if (category !== prevCategory) {
+        setPrevCategory(category);
+        setLoading(true);
+    }
 
     useEffect(() => {
-        fetch("/data/products.json")
-            .then((resp) => {
-                if (!resp.ok) {
-                    throw new Error(`Error HTTP: ${resp.status} - No se encontró el archivo o hubo un error en el servidor.`);
-                }
-                return resp.json();
-            })
+        getByCategory(category)
             .then((data) => {
                 setProducts(data);
             })
@@ -41,7 +25,7 @@ export const ItemListContainer = () => {
                 setError("No se pudieron cargar los productos. Revisa la consola para más detalles.");
             })
             .finally(() => setLoading(false));
-    }, []);
+    }, [category]);
 
     if (loading) return <p>Cargando...</p>;
     if (error) return <p>{error}</p>;
