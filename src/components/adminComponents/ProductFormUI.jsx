@@ -9,6 +9,7 @@ export const ProductFormUI = ({
     onSubmit,
     isEditMode,
     currentImageUrl,
+    onLogout,
 }) => {
     return (
         <div className="admin-form-container">
@@ -16,9 +17,14 @@ export const ProductFormUI = ({
                 <h2 className="admin-form-title">
                     {isEditMode ? "Editar Producto" : "Cargar Nuevo Producto"}
                 </h2>
-                <Link to="/admin" className="logout-btn">
-                    Volver al Panel
-                </Link>
+                <div className="admin-header-actions">
+                    <Link to="/admin" className="btn-logout" style={{ textDecoration: 'none', color: '#475569', background: '#f1f5f9', border: '1px solid #cbd5e1' }}>
+                        Volver al Panel
+                    </Link>
+                    <button type="button" onClick={onLogout} className="btn-logout">
+                        Cerrar Sesión
+                    </button>
+                </div>
             </div>
             
             {errors.general && <div className="error-message general-error">{errors.general}</div>}

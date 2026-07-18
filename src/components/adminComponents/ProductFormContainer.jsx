@@ -5,11 +5,13 @@ import { ProductFormUI } from "./ProductFormUI";
 import { validateProduct } from "../../utils/validateProduct";
 import { uploadImage } from "../../services/uploadImage";
 import { createProduct, getProductById, updateProduct } from "../../services/productsService";
+import { useAuth } from "../../context/useAuth";
 import "./productContainer.css";
 
 export const ProductFormContainer = () => {
     const navigate = useNavigate();
     const { id } = useParams();
+    const { logout } = useAuth();
     const isEditMode = Boolean(id);
 
     const [loading, setLoading] = useState(false);
@@ -131,6 +133,7 @@ export const ProductFormContainer = () => {
             onSubmit={handleSubmit}
             isEditMode={isEditMode}
             currentImageUrl={currentImageUrl}
+            onLogout={logout}
         />
     );
 };
