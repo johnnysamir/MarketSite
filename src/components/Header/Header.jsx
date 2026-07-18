@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/react.svg";
 import { Nav } from "../Nav/Nav";
 import "./Header.css";
@@ -5,10 +6,10 @@ import "./Header.css";
 export const Header = () => {
     return (
         <header>
-            <div className="logo-container">
+            <Link to="/" className="logo-container">
                 <img src={logo} />
                 <span>ReacTivate</span>
-            </div>
+            </Link>
             <Nav />
         </header>
     );

@@ -9,6 +9,8 @@ header {
     display: flex;
     align-items: center;
     font-size: 2rem;
+    text-decoration: none;
+    color: inherit;
 }
 
 @media (max-width: 600px) {
