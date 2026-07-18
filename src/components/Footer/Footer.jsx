@@ -7,7 +7,7 @@ export const Footer = () => {
             <nav>
                 <ul className="nav-list">
                     <li>
-                        <a href="https://wa.me/5491121800021" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/5491126364823" target="_blank" rel="noopener noreferrer">
                             WhatsApp
                         </a>
                     </li>
