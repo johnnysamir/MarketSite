@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/useCart.jsx";
-import { useAuth } from "../../context/useAuth.jsx";
 import "./Nav.css";
 
 export const Nav = () => {
-    const totalItems = useCart().getTotalItems();
-    const { user, logout } = useAuth();
-
+    // este es el custom hook que se va a usar para acceder al contexto y obtener el total de items en el carrito     
+    const totalItems = useCart().getTotalItems(); // se obtiene el total de items en el carrito usando el custom hook
     return (
         <nav>
             <ul className="nav-list">
@@ -31,20 +29,6 @@ export const Nav = () => {
                         {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
                     </Link>
                 </li>
-                {user && (
-                    <>
-                        <li>
-                            <Link to="/admin" style={{ color: "#3b82f6", fontWeight: "bold" }}>
-                                Admin
-                            </Link>
-                        </li>
-                        <li>
-                            <button onClick={logout} className="nav-logout-btn">
-                                Salir
-                            </button>
-                        </li>
-                    </>
-                )}
             </ul>
         </nav>
     );
